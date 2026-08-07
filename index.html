@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💗</title>
 
     <link rel="stylesheet" href="style.css">
@@ -10,17 +11,20 @@
 
 <body>
 
+    <!-- Uçuşan kalpler -->
+    <div id="kalpler"></div>
+
     <div class="kutu">
 
         <h1 id="baslik">slm cnm</h1>
 
-        <img id="kopek" src="kopek.png">
+        <img id="kopek" src="kopek.png" alt="köpek">
 
-        <!-- Finalde görünecek tatlı gifler -->
+        <!-- Final GIFleri -->
         <div id="finalGifler">
 
             <img src="My Love Couple GIF by Cosytales.gif" alt="Kalp">
-            <img src="Cat Kawai GIF.gif" alt= "Tavşan">
+            <img src="Cat Kawai GIF.gif" alt="Tavşan">
             <img src="Heart Love GIF by Bunny (1).gif" alt="Kalp">
 
         </div>
@@ -33,21 +37,65 @@
 
     </div>
 
-    <!-- Tam ekran sürpriz -->
 
-    <div id="surprizEkran">
+    <!-- Sevgi yazısı sayfası -->
 
-        <img id="surprizGif" src="jumpscare.gif">
+    <div id="sevgiSayfasi" class="ekran">
 
-        <h1 id="surprizYazi"></h1>
+        <div class="sayfaIcerik">
 
-        <div id="surprizButon"></div>
+            <h1>ben de seni çok seviyorum 🥹💗</h1>
+
+            <img id="sevgiYazisi" src="sevgi-yazisi.png" alt="Seni seviyorum">
+
+            <div class="altButonlar">
+
+                <button onclick="final()">yaa💕</button>
+
+                <button onclick="okumuyorum()">i ain't reading that shit</button>
+
+            </div>
+
+        </div>
 
     </div>
 
-    <!-- Ses -->
 
-    <audio id="ses" src="jumpscare.mp3"></audio>
+    <!-- Okumuyorum sayfası -->
+
+    <div id="okumuyorumSayfasi" class="ekran">
+
+        <div class="sayfaIcerik">
+
+            <h1>tmm ama barıştık 😭</h1>
+
+            <button onclick="final()">tmm</button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Zorla barıştık sayfası -->
+
+    <div id="zorlaSayfasi" class="ekran">
+
+        <div class="sayfaIcerik">
+
+            <h1>sonuçta barıştık ama 😭</h1>
+
+            <div id="zorlaButonlar">
+
+                <button id="evetButonu" onclick="zorlaEvet()">evet</button>
+
+                <button id="hayirButonu" onclick="hayirBuyut()">hayır</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
 
     <script src="script.js"></script>
 
