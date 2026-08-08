@@ -1,8 +1,14 @@
 * {
     box-sizing: border-box;
 }
+html,
 body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+body {
     background:
         radial-gradient(circle at 20% 20%, #fff0f7 0%, transparent 30%),
         radial-gradient(circle at 80% 80%, #ffc1dc 0%, transparent 35%),
@@ -120,32 +126,48 @@ button:active {
 /* JUMPSCARE */
 /* -------------------- */
 #jumpscare {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
     display: none;
-    justify-content: center;
-    align-items: center;
     background: #000;
-    z-index: 99999;
     overflow: hidden;
+    z-index: 999999 !important;
 }
+/* GIF */
 #jumpscareGif {
-    position: absolute;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    display: block;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-width: 100vw !important;
+    min-height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    display: block !important;
+    object-fit: cover !important;
+    z-index: 1 !important;
 }
+/* JUMPSCARE BUTONU */
 #jumpscareButon {
-    position: absolute;
-    left: 50%;
-    bottom: 40px;
-    transform: translateX(-50%);
-    z-index: 100000;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 40px !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    z-index: 9999999 !important;
     display: none;
+    white-space: nowrap;
     background:
         linear-gradient(
             135deg,
@@ -159,7 +181,7 @@ button:active {
     font-size: 20px;
     cursor: pointer;
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, .4);
+        0 8px 25px rgba(0, 0, 0, .5);
 }
 /* -------------------- */
 /* FINAL GIFLERİ */
@@ -337,17 +359,33 @@ button:active {
         height: 100px;
         margin: 4px;
     }
+    /* TELEFONDA DA TAM EKRAN */
+    #jumpscare {
+        width: 100vw !important;
+        height: 100vh !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
     #jumpscareGif {
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        max-height: none;
+        width: 100vw !important;
+        height: 100vh !important;
+        min-width: 100vw !important;
+        min-height: 100vh !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: cover !important;
     }
     #jumpscareButon {
+        left: 50% !important;
+        bottom: 25px !important;
         font-size: 17px;
         padding:
             13px 22px;
-        bottom: 30px;
+        z-index: 9999999 !important;
     }
     #sevgiMetni {
         width:
@@ -361,61 +399,4 @@ button:active {
         padding:
             20px;
     }
-}
-/* JUMPSCARE TAM EKRAN - SON DÜZELTME */
-
-#jumpscare {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-
-    padding: 0 !important;
-    margin: 0 !important;
-
-    display: none;
-
-    background: #000 !important;
-
-    z-index: 999999 !important;
-
-    overflow: hidden !important;
-}
-
-#jumpscareGif {
-    position: absolute !important;
-
-    top: 0 !important;
-    left: 0 !important;
-
-    width: 100vw !important;
-    height: 100vh !important;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    object-fit: cover !important;
-
-    z-index: 1 !important;
-}
-
-#jumpscareButon {
-    position: fixed !important;
-
-    left: 50% !important;
-    bottom: 40px !important;
-
-    transform: translateX(-50%) !important;
-
-    z-index: 9999999 !important;
-
-    display: none;
-
-    margin: 0 !important;
-
-    pointer-events: auto !important;
 }
