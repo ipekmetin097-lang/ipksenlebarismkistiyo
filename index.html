@@ -7,17 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Uçuşan kalpler -->
     <div id="kalpler"></div>
-    <!-- Jumpscare -->
+    <!-- JUMPSCARE -->
     <div id="jumpscare">
-        <img src="jumpscare.gif" alt="jumpscare">
+        <img id="jumpscareGif" src="jumpscare.gif" alt="jumpscare">
+        <button id="jumpscareButon" onclick="jumpscareKapat()">
+            pardon askım barisalm 💗
+        </button>
     </div>
-    <audio id="jumpscareAudio" src="jumpscare.mp3"></audio>
+    <audio id="jumpscareAudio" src="jumpscare.mp3" preload="auto"></audio>
+    <!-- ANA SAYFA -->
     <div class="kutu">
         <h1 id="baslik">slm cnm</h1>
         <img id="kopek" src="kopek.png" alt="köpek">
-        <!-- Final GIFleri -->
         <div id="finalGifler">
             <img src="My Love Couple GIF by Cosytales.gif" alt="Kalp">
             <img src="Cat Kawai GIF.gif" alt="Tavşan">
@@ -29,39 +31,34 @@
             </button>
         </div>
     </div>
-    <!-- Sevgi yazısı sayfası -->
+    <!-- SEVGİ SAYFASI -->
     <div id="sevgiSayfasi" class="ekran">
         <div class="sayfaIcerik">
-            <h1>ben de seni ck svym💗</h1>
+            <h1>ben de seni ck svym 💗</h1>
             <div id="sevgiMetni">
                 <p>
-                    Arada seni üzdüğüm için çok özür dilerim.
-                    Seni üzmek gibi bir niyetim asla yoktu, hiçbir zaman.
-                    Cidden annem ve ailem hakkında en rahat konuşabildiğim
-                    kişisin ve bu benim için çok değerli.
-                </p>
-                <p>
-                    Senden önce gerçekten bütün sanal ilişki yapanlara
-                    amk malları falan diyordum ama seninle tanışınca
-                    bu düşüncem tamamen değişti.
-                </p>
-                <p>
-                    Nereye kadar gidebiliriz bilmiyorum ama gerçekten
-                    benim için çok değerlisin Tuna.
-                </p>
-                <p>
-                    Bazen birbirimize iğrenç davranıyoruz, anlamıyoruz,
-                    sürekli suçluyoruz ve kırıyoruz evet.
-                    Ama ben seni hâlâ her şeye rağmen çok seviyorum.
-                </p>
-                <p>
-                    Umarım sen de hâlâ beni çok seviyosundur ve beni
-                    affedersin ve düzgün, sağlıklı bir ilişkiye başlarız. 💕
+                    Arada seni uzdugum icin cok pzur dilerim.
+                    Seni üzmek gibi bir niyetim asla yoktu
+                    hicbi zaman.
+                    Cidden annem ve ailem hakkında en rahat
+                    konusabildigim kisisin ve bu benim icin
+                    cok değerli.
+                    Senden önce gercekten btun sanal iliski
+                    yapanlara amk malllari falan diyordum ama
+                    seninle tanisinca bu dusuncem tamamen degisri.
+                    Nereye kadar gidebiliriz bilmiyorum ama
+                    gerçekten benim icin cok degerlisin Tuna.
+                    Bazen birbirimize igrenc davranıyoruz,
+                    anlamıyoruz, surekli suçluyoruz ve kırıyoruz
+                    evet.
+                    Ama ben seni hala her seye ragmen gercekten cok seviyorum.
+                    Umarım sen de hala beni çok seviyosundur ve beni affedersin.
+                    Ve duzgun, saglikli bir iliskiye baslaeiz. 💕
                 </p>
             </div>
             <div class="altButonlar">
                 <button onclick="final()">
-                    yaa💕
+                    yaa 💕
                 </button>
                 <button onclick="okumuyorum()">
                     i ain't reading that shit vro
@@ -69,18 +66,18 @@
             </div>
         </div>
     </div>
-    <!-- Okumuyorum sayfası -->
+    <!-- OKUMUYORUM -->
     <div id="okumuyorumSayfasi" class="ekran">
         <div class="sayfaIcerik">
             <h1>
-                tmm ama barıstik
+                tmm ama barıstık
             </h1>
             <button onclick="final()">
                 tmm
             </button>
         </div>
     </div>
-    <!-- Zorla barıştık sayfası -->
+    <!-- ZORLA BARIŞTIK -->
     <div id="zorlaSayfasi" class="ekran">
         <div class="sayfaIcerik">
             <h1>
