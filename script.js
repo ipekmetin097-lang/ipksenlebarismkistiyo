@@ -174,7 +174,7 @@ function surpriz() {
         setTimeout(function () {
             buton.style.display =
                 "block";
-        }, 6000);
+        }, 4500);
 }
 /* -------------------- */
 /* JUMPSCARE KAPAT */
