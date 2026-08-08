@@ -15,7 +15,7 @@ function kalpOlustur() {
 
     kalp.className = "kalp";
 
-    const kalpTipleri = ["💗", "💕", "💖", "💘", "❤️", "💓"];
+    const kalpTipleri = ["💗", "💕", "💖", "💘", "💓"];
 
     kalp.innerHTML =
         kalpTipleri[Math.floor(Math.random() * kalpTipleri.length)];
@@ -190,12 +190,14 @@ function dusunme() {
 
 
 function surpriz(yazi) {
-
+    document.getElementById("jumpscare.gif").innerHTML = `
+    document.getElementById("jumpscare.mp3").innerHTML = `
+            <button onclick="devamEt()">pardon askim barisalim</button>
     document.getElementById("baslik").innerHTML =
         yazi;
 
     document.getElementById("butonlar").innerHTML = `
-        <button onclick="finalSecim()">pardon cnm barışalım</button>
+        <button onclick="finalSecim()">pardon askim barisalim </button>
     `;
 
 }
@@ -208,10 +210,10 @@ function surpriz(yazi) {
 function finalSecim() {
 
     document.getElementById("baslik").innerHTML =
-        "barıştık ama 😭";
+        "baristik dimi";
 
     document.getElementById("butonlar").innerHTML = `
-        <button onclick="sevgiSayfasi()">seni çok seviyorum 💗</button>
+        <button onclick="sevgiSayfasi()">seni cok seviyorum 💗</button>
         <button onclick="zorlaSayfasi()">zorla barıştık mal</button>
     `;
 
@@ -337,7 +339,7 @@ function final() {
         "none";
 
     document.getElementById("baslik").innerHTML =
-        "seni çok seviyorum cnmmm 💗";
+        "seni cok seviyorum cnmmm 💗";
 
     document.getElementById("butonlar").innerHTML =
         "";
