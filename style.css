@@ -362,3 +362,60 @@ button:active {
             20px;
     }
 }
+/* JUMPSCARE TAM EKRAN - SON DÜZELTME */
+
+#jumpscare {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: none;
+
+    background: #000 !important;
+
+    z-index: 999999 !important;
+
+    overflow: hidden !important;
+}
+
+#jumpscareGif {
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    object-fit: cover !important;
+
+    z-index: 1 !important;
+}
+
+#jumpscareButon {
+    position: fixed !important;
+
+    left: 50% !important;
+    bottom: 40px !important;
+
+    transform: translateX(-50%) !important;
+
+    z-index: 9999999 !important;
+
+    display: none;
+
+    margin: 0 !important;
+
+    pointer-events: auto !important;
+}
