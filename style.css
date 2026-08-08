@@ -1,413 +1,285 @@
 * {
     box-sizing: border-box;
 }
-
 body {
-
     margin: 0;
-
     background:
         radial-gradient(circle at 20% 20%, #fff0f7 0%, transparent 30%),
         radial-gradient(circle at 80% 80%, #ffc1dc 0%, transparent 35%),
         linear-gradient(135deg, #ffd6e7, #ffeaf3, #ffc8df);
-
     font-family: Arial, sans-serif;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     min-height: 100vh;
-
     overflow: hidden;
 }
-
-
 /* -------------------- */
 /* ANA KUTU */
 /* -------------------- */
-
 .kutu {
-
     text-align: center;
-
     width: 90%;
     max-width: 900px;
-
     position: relative;
-
     z-index: 2;
-
     animation: giris 1s ease;
 }
-
-
 h1 {
-
     color: #ff4f96;
-
     font-size: clamp(35px, 6vw, 65px);
-
     margin-bottom: 25px;
-
     text-shadow:
         2px 2px 10px rgba(255, 79, 150, 0.2);
-
     animation: hafif 2s infinite ease-in-out;
 }
-
-
 #kopek {
-
     width: 220px;
-
     max-width: 70vw;
-
     display: none;
-
     margin: 20px auto;
-
     border-radius: 20px;
-
     box-shadow:
         0 10px 30px rgba(255, 79, 150, 0.2);
 }
-
-
 /* -------------------- */
 /* BUTONLAR */
 /* -------------------- */
-
 button {
-
-    background: linear-gradient(135deg, #ff4f96, #ff78ad);
-
+    background:
+        linear-gradient(135deg, #ff4f96, #ff78ad);
     color: white;
-
     border: none;
-
     border-radius: 40px;
-
     padding: 15px 30px;
-
     font-size: 20px;
-
     margin: 10px;
-
     cursor: pointer;
-
     box-shadow:
         0 8px 20px rgba(255, 79, 150, 0.25);
-
     transition:
         transform .25s ease,
         box-shadow .25s ease;
 }
-
 button:hover {
-
     transform: scale(1.08);
-
     box-shadow:
         0 12px 25px rgba(255, 79, 150, 0.35);
 }
-
 button:active {
-
     transform: scale(.95);
 }
-
-
 /* -------------------- */
 /* UÇUŞAN KALPLER */
 /* -------------------- */
-
 #kalpler {
-
     position: fixed;
-
     inset: 0;
-
     pointer-events: none;
-
     overflow: hidden;
-
     z-index: 1;
 }
-
-
 .kalp {
-
     position: absolute;
-
     bottom: -50px;
-
     color: #ff5c9d;
-
     font-size: 20px;
-
     opacity: .7;
-
-    animation: kalpUcusu linear forwards;
+    animation:
+        kalpUcusu linear forwards;
 }
-
-
 @keyframes kalpUcusu {
-
     0% {
-
         transform:
             translateY(0)
             rotate(0deg)
             scale(.7);
-
         opacity: 0;
     }
-
     10% {
-
         opacity: .8;
     }
-
     90% {
-
         opacity: .8;
     }
-
     100% {
-
         transform:
             translateY(-110vh)
             rotate(360deg)
             scale(1.2);
-
         opacity: 0;
     }
 }
-
-
 /* -------------------- */
 /* FINAL GIFLERİ */
 /* -------------------- */
-
 #finalGifler {
-
     display: none;
-
     margin-top: 25px;
-
-    animation: finalGiris 1s ease;
+    animation:
+        finalGiris 1s ease;
 }
-
-
 #finalGifler img {
-
     width: 170px;
-
     height: 170px;
-
     object-fit: cover;
-
     border-radius: 20px;
-
     margin: 8px;
-
     box-shadow:
         0 10px 25px rgba(255, 79, 150, .2);
-
-    transition: transform .3s ease;
+    transition:
+        transform .3s ease;
 }
-
-
 #finalGifler img:hover {
-
-    transform: scale(1.08) rotate(2deg);
+    transform:
+        scale(1.08)
+        rotate(2deg);
 }
-
-
 /* -------------------- */
 /* GENEL EKRANLAR */
 /* -------------------- */
-
 .ekran {
-
     position: fixed;
-
     inset: 0;
-
     display: none;
-
     justify-content: center;
-
     align-items: center;
-
     text-align: center;
-
     padding: 20px;
-
     background:
-        radial-gradient(circle at 20% 20%, #fff0f7, transparent 35%),
-        linear-gradient(135deg, #ffd6e7, #ffeaf3, #ffc8df);
-
+        radial-gradient(
+            circle at 20% 20%,
+            #fff0f7,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #ffeaf3,
+            #ffc8df
+        );
     z-index: 10;
+    overflow-y: auto;
 }
-
-
 .sayfaIcerik {
-
     width: 95%;
-
     max-width: 900px;
-
-    animation: giris 0.7s ease;
+    animation:
+        giris .7s ease;
 }
-
-
 /* -------------------- */
 /* SEVGİ YAZISI */
 /* -------------------- */
-
-#sevgiYazisi {
-
-    display: block;
-
-    width: min(700px, 90vw);
-
-    max-height: 50vh;
-
-    object-fit: contain;
-
+#sevgiMetni {
+    width: min(750px, 92vw);
+    max-height: 55vh;
+    overflow-y: auto;
     margin: 20px auto;
-
-    border-radius: 20px;
-
+    padding: 25px 30px;
+    background:
+        rgba(255, 255, 255, 0.55);
+    border-radius: 25px;
     box-shadow:
         0 10px 30px rgba(255, 79, 150, .15);
+    text-align: left;
+    color: #7d3153;
+    font-size: 18px;
+    line-height: 1.7;
+    backdrop-filter: blur(5px);
 }
-
-
+#sevgiMetni p {
+    margin:
+        0 0 18px 0;
+}
+#sevgiMetni p:last-child {
+    margin-bottom: 0;
+}
 .altButonlar {
-
     display: flex;
-
     justify-content: center;
-
     flex-wrap: wrap;
 }
-
-
 /* -------------------- */
 /* ZORLA SAYFASI */
 /* -------------------- */
-
 #zorlaButonlar {
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     flex-wrap: wrap;
-
     min-height: 150px;
 }
-
-
 #evetButonu {
-
     transition:
         transform .4s ease,
         font-size .4s ease,
         padding .4s ease;
 }
-
-
 #hayirButonu {
-
-    transition: transform .2s ease;
+    transition:
+        transform .2s ease;
 }
-
-
 /* -------------------- */
 /* ANİMASYONLAR */
 /* -------------------- */
-
 @keyframes giris {
-
     from {
-
         opacity: 0;
-
-        transform: translateY(20px) scale(.95);
+        transform:
+            translateY(20px)
+            scale(.95);
     }
-
     to {
-
         opacity: 1;
-
-        transform: translateY(0) scale(1);
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
-
-
 @keyframes hafif {
-
-    0%, 100% {
-
-        transform: translateY(0);
+    0%,
+    100% {
+        transform:
+            translateY(0);
     }
-
     50% {
-
-        transform: translateY(-5px);
+        transform:
+            translateY(-5px);
     }
 }
-
-
 @keyframes finalGiris {
-
     from {
-
         opacity: 0;
-
-        transform: scale(.8);
+        transform:
+            scale(.8);
     }
-
     to {
-
         opacity: 1;
-
-        transform: scale(1);
+        transform:
+            scale(1);
     }
 }
-
-
 /* -------------------- */
-/* TABLET / TELEFON */
+/* TELEFON / TABLET */
 /* -------------------- */
-
 @media (max-width: 600px) {
-
     h1 {
-
         font-size: 38px;
     }
-
     button {
-
         font-size: 17px;
-
-        padding: 13px 22px;
+        padding:
+            13px 22px;
     }
-
     #finalGifler img {
-
         width: 100px;
-
         height: 100px;
-
         margin: 4px;
     }
-
+    #sevgiMetni {
+        font-size: 16px;
+        line-height: 1.6;
+        padding:
+            20px;
+    }
 }
