@@ -1,24 +1,27 @@
 let sayfa = 0;
 let hayirSayisi = 0;
 /* -------------------- */
-/* UÇUŞAN KALPLER */
+/* KALP SİSTEMİ */
 /* -------------------- */
 function kalpOlustur() {
-    const kalpler = document.getElementById("kalpler");
-    if (!kalpler) return;
-    const kalp = document.createElement("div");
+    const kalpler =
+        document.getElementById("kalpler");
+    const kalp =
+        document.createElement("div");
     kalp.className = "kalp";
     const kalpTipleri = [
         "💗",
         "💕",
         "💖",
         "💘",
-        "💓",
-        "💞"
+        "💓"
     ];
     kalp.innerHTML =
         kalpTipleri[
-            Math.floor(Math.random() * kalpTipleri.length)
+            Math.floor(
+                Math.random() *
+                kalpTipleri.length
+            )
         ];
     kalp.style.left =
         Math.random() * 100 + "%";
@@ -39,9 +42,9 @@ setInterval(kalpOlustur, 500);
 /* -------------------- */
 function devamEt() {
     sayfa++;
-    if (sayfa === 1) {
+    if (sayfa == 1) {
         document.getElementById("baslik").innerHTML =
-            "hoşgeldin...";
+            "hoşgldn...";
         document.getElementById("kopek").style.display =
             "block";
         document.getElementById("butonlar").innerHTML = `
@@ -50,7 +53,7 @@ function devamEt() {
             </button>
         `;
     }
-    else if (sayfa === 2) {
+    else if (sayfa == 2) {
         document.getElementById("kopek").style.display =
             "none";
         document.getElementById("baslik").innerHTML =
@@ -73,10 +76,10 @@ function superr() {
         "niye?????";
     document.getElementById("butonlar").innerHTML = `
         <button onclick="tmmSus()">
-            sen olmadan geçen günlerim çok huzurlu
+            sen olmadan gecen gunlerim cok huzurlu
         </button>
         <button onclick="tmmSus()">
-            iyiyim işte mal
+            iyiyim iste mal
         </button>
     `;
 }
@@ -88,7 +91,7 @@ function kotu() {
             sni ck ozledm
         </button>
         <button onclick="tmmSus()">
-            senle ilgisi yok mal her şeyi üstüne alınma
+            senle ilgisi yok mal herseyi ustune alinma
         </button>
     `;
 }
@@ -152,16 +155,47 @@ function hayir() {
 function dusunme() {
     surpriz("DÜŞÜNMEN Mİ LAZIM??!!");
 }
+/* -------------------- */
+/* JUMPSCARE */
+/* -------------------- */
 function surpriz(yazi) {
-    /*
-     Eski kodda JavaScript burada kırılıyordu.
-     Artık jumpscare dosyalarına erişmeye çalışmıyor.
-    */
     document.getElementById("baslik").innerHTML =
         yazi;
+    const jumpscare =
+        document.getElementById("jumpscare");
+    const audio =
+        document.getElementById("jumpscareAudio");
+    jumpscare.style.display =
+        "flex";
+    audio.currentTime = 0;
+    audio.play().catch(function () {
+        console.log(
+            "Ses otomatik olarak başlatılamadı."
+        );
+    });
     document.getElementById("butonlar").innerHTML = `
-        <button onclick="finalSecim()">
-            pardon askım barışalım 💗
+        <button onclick="jumpscareKapat()">
+            pardon askim barisalim
+        </button>
+    `;
+}
+function jumpscareKapat() {
+    const jumpscare =
+        document.getElementById("jumpscare");
+    const audio =
+        document.getElementById("jumpscareAudio");
+    jumpscare.style.display =
+        "none";
+    audio.pause();
+    audio.currentTime = 0;
+    document.getElementById("baslik").innerHTML =
+        "barışak mı";
+    document.getElementById("butonlar").innerHTML = `
+        <button onclick="evet1()">
+            evet
+        </button>
+        <button onclick="hayir()">
+            hayır
         </button>
     `;
 }
@@ -170,10 +204,10 @@ function surpriz(yazi) {
 /* -------------------- */
 function finalSecim() {
     document.getElementById("baslik").innerHTML =
-        "barıştık dimi";
+        "baristik dimi";
     document.getElementById("butonlar").innerHTML = `
         <button onclick="sevgiSayfasi()">
-            seni çok seviyorum 💗
+            seni cok seviyorum 💗
         </button>
         <button onclick="zorlaSayfasi()">
             zorla barıştık mal
@@ -181,7 +215,7 @@ function finalSecim() {
     `;
 }
 /* -------------------- */
-/* SEVGİ SAYFASI */
+/* SENİ ÇOK SEVİYORUM */
 /* -------------------- */
 function sevgiSayfasi() {
     document.getElementById("sevgiSayfasi").style.display =
@@ -200,22 +234,17 @@ function zorlaSayfasi() {
     document.getElementById("zorlaSayfasi").style.display =
         "flex";
     hayirSayisi = 0;
-    const evet =
-        document.getElementById("evetButonu");
-    evet.style.position = "";
-    evet.style.inset = "";
-    evet.style.width = "";
-    evet.style.height = "";
-    evet.style.margin = "";
-    evet.style.borderRadius = "";
-    evet.style.fontSize = "";
-    evet.style.transform = "scale(1)";
-    evet.innerHTML = "evet";
+    document.getElementById("evetButonu").style.transform =
+        "scale(1)";
 }
 function hayirBuyut() {
     hayirSayisi++;
     const evet =
         document.getElementById("evetButonu");
+    /*
+    Her hayırda evet butonu büyüyor.
+    5. hayırda ekranı kaplıyor.
+    */
     if (hayirSayisi < 5) {
         const buyume =
             1 + (hayirSayisi * 0.8);
@@ -223,12 +252,18 @@ function hayirBuyut() {
             `scale(${buyume})`;
     }
     else {
-        evet.style.position = "fixed";
-        evet.style.inset = "0";
-        evet.style.width = "100vw";
-        evet.style.height = "100vh";
-        evet.style.margin = "0";
-        evet.style.borderRadius = "0";
+        evet.style.position =
+            "fixed";
+        evet.style.inset =
+            "0";
+        evet.style.width =
+            "100vw";
+        evet.style.height =
+            "100vh";
+        evet.style.margin =
+            "0";
+        evet.style.borderRadius =
+            "0";
         evet.style.fontSize =
             "clamp(40px, 10vw, 100px)";
         evet.innerHTML =
@@ -251,7 +286,7 @@ function final() {
     document.getElementById("zorlaSayfasi").style.display =
         "none";
     document.getElementById("baslik").innerHTML =
-        "seni çok seviyorum cnmmm 💗";
+        "seni cok seviyorum cnmmm 💗";
     document.getElementById("butonlar").innerHTML =
         "";
     document.getElementById("kopek").style.display =
