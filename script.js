@@ -35,7 +35,7 @@ function devamEt() {
         document.getElementById("kopek").style.display =
             "block";
         document.getElementById("butonlar").innerHTML = `
-            <button onclick="devamEt()">hos buldum</button>
+            <button onclick="devamEt()">hoş buldum</button>
         `;
     }
     else if (sayfa == 2) {
@@ -100,46 +100,57 @@ function sonSoru() {
         "son kez soruyorum";
     document.getElementById("butonlar").innerHTML = `
         <button onclick="finalSecim()">evt</button>
-        <button onclick="dusunme()">dusunmem lazım</button>
+        <button onclick="dusunme()">düşünmem lazım</button>
     `;
 }
 /* -------------------- */
 /* HAYIR / DÜŞÜNME */
 /* -------------------- */
 function hayir() {
-    surpriz("HAYIR MI??!!");
+    surpriz();
 }
 function dusunme() {
-    surpriz("DUSUNMEN Mİ LAZIM??!!");
+    surpriz();
 }
 /* -------------------- */
 /* JUMPSCARE */
 /* -------------------- */
-function surpriz(yazi) {
-    document.getElementById("baslik").innerHTML =
-        yazi;
+function surpriz() {
+    const kutu =
+        document.querySelector(".kutu");
     const jumpscare =
         document.getElementById("jumpscare");
     const audio =
         document.getElementById("jumpscareAudio");
     const buton =
         document.getElementById("jumpscareButon");
+    /* Ana sayfadaki bütün yazıları gizle */
+    kutu.style.display =
+        "none";
     /* Jumpscare'i aç */
     jumpscare.style.display =
         "flex";
-    /* Butonu başlangıçta gizle */
+    /* Buton hemen görünmesin */
     buton.style.display =
         "none";
-    /* Jumpscare sesini başlat */
+    /* GIF'i baştan başlat */
+    const gif =
+        document.getElementById("jumpscareGif");
+    gif.src = "";
+    gif.offsetHeight;
+    gif.src = "jumpscare.gif";
+    /* MP3'ü baştan başlat */
     audio.currentTime = 0;
     audio.play().catch(function () {
         console.log(
             "Tarayıcı ses oynatmayı engelledi."
         );
     });
-    /* 3 saniye sonra butonu göster */
+    /* 3 saniye sonra buton */
     setTimeout(function () {
-        if (jumpscare.style.display === "flex") {
+        if (
+            jumpscare.style.display === "flex"
+        ) {
             buton.style.display =
                 "block";
         }
@@ -149,18 +160,25 @@ function surpriz(yazi) {
 /* JUMPSCARE KAPAT */
 /* -------------------- */
 function jumpscareKapat() {
+    const kutu =
+        document.querySelector(".kutu");
     const jumpscare =
         document.getElementById("jumpscare");
     const audio =
         document.getElementById("jumpscareAudio");
     const buton =
         document.getElementById("jumpscareButon");
+    /* Jumpscare kapat */
     jumpscare.style.display =
         "none";
     buton.style.display =
         "none";
+    /* Sesi durdur */
     audio.pause();
     audio.currentTime = 0;
+    /* Ana sayfayı geri getir */
+    kutu.style.display =
+        "block";
     document.getElementById("baslik").innerHTML =
         "barışak mı";
     document.getElementById("butonlar").innerHTML = `
@@ -175,8 +193,8 @@ function finalSecim() {
     document.getElementById("baslik").innerHTML =
         "baristik dimi";
     document.getElementById("butonlar").innerHTML = `
-        <button onclick="sevgiSayfasi()">seni cok seviyorum</button>
-        <button onclick="zorlaSayfasi()">zorla baristik mal</button>
+        <button onclick="sevgiSayfasi()">seni cok seviyorum 💗</button>
+        <button onclick="zorlaSayfasi()">zorla barıştık mal</button>
     `;
 }
 /* -------------------- */
