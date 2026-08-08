@@ -92,7 +92,7 @@ function evet1() {
         "emin misin";
     document.getElementById("butonlar").innerHTML = `
         <button onclick="sonSoru()">evt</button>
-        <button onclick="dusunme()">düşünmem lazım</button>
+        <button onclick="dusunme()">dusunmem lazım</button>
     `;
 }
 function sonSoru() {
@@ -100,7 +100,7 @@ function sonSoru() {
         "son kez soruyorum";
     document.getElementById("butonlar").innerHTML = `
         <button onclick="finalSecim()">evt</button>
-        <button onclick="dusunme()">düşünmem lazım</button>
+        <button onclick="dusunme()">dusunmem lazım</button>
     `;
 }
 /* -------------------- */
@@ -124,18 +124,22 @@ function surpriz() {
         document.getElementById("jumpscareAudio");
     const buton =
         document.getElementById("jumpscareButon");
-    /* Ana sayfadaki bütün yazıları gizle */
+    const yazi =
+        document.getElementById("jumpscareYazi");
+    const gif =
+        document.getElementById("jumpscareGif");
+    /* Ana sayfayı gizle */
     kutu.style.display =
         "none";
     /* Jumpscare'i aç */
     jumpscare.style.display =
         "flex";
-    /* Buton hemen görünmesin */
+    /* Yazı ve buton başlangıçta gizli */
+    yazi.style.display =
+        "none";
     buton.style.display =
         "none";
     /* GIF'i baştan başlat */
-    const gif =
-        document.getElementById("jumpscareGif");
     gif.src = "";
     gif.offsetHeight;
     gif.src = "jumpscare.gif";
@@ -146,7 +150,16 @@ function surpriz() {
             "Tarayıcı ses oynatmayı engelledi."
         );
     });
-    /* 3 saniye sonra buton */
+    /* 3 SANİYE SONRA YAZI */
+    setTimeout(function () {
+        if (
+            jumpscare.style.display === "flex"
+        ) {
+            yazi.style.display =
+                "block";
+        }
+    }, 3000);
+    /* 6 SANİYE SONRA BUTON */
     setTimeout(function () {
         if (
             jumpscare.style.display === "flex"
@@ -154,7 +167,7 @@ function surpriz() {
             buton.style.display =
                 "block";
         }
-    }, 3000);
+    }, 6000);
 }
 /* -------------------- */
 /* JUMPSCARE KAPAT */
@@ -168,8 +181,13 @@ function jumpscareKapat() {
         document.getElementById("jumpscareAudio");
     const buton =
         document.getElementById("jumpscareButon");
-    /* Jumpscare kapat */
+    const yazi =
+        document.getElementById("jumpscareYazi");
+    /* Jumpscare'i kapat */
     jumpscare.style.display =
+        "none";
+    /* Yazı ve butonu gizle */
+    yazi.style.display =
         "none";
     buton.style.display =
         "none";
@@ -193,8 +211,8 @@ function finalSecim() {
     document.getElementById("baslik").innerHTML =
         "baristik dimi";
     document.getElementById("butonlar").innerHTML = `
-        <button onclick="sevgiSayfasi()">seni cok seviyorum 💗</button>
-        <button onclick="zorlaSayfasi()">zorla barıştık mal</button>
+        <button onclick="sevgiSayfasi()">seni cok seviyorum</button>
+        <button onclick="zorlaSayfasi()">zorla baristik mal</button>
     `;
 }
 /* -------------------- */
@@ -211,7 +229,7 @@ function okumuyorum() {
         "flex";
 }
 /* -------------------- */
-/* ZORLA BARIŞTIK */
+/* ZORLA SAYFASI */
 /* -------------------- */
 function zorlaSayfasi() {
     document.getElementById("zorlaSayfasi").style.display =
@@ -224,10 +242,6 @@ function hayirBuyut() {
     hayirSayisi++;
     const evet =
         document.getElementById("evetButonu");
-    /*
-    Her hayırda evet butonu büyüyor.
-    5. hayırda ekranı kaplıyor.
-    */
     if (hayirSayisi < 5) {
         const buyume =
             1 + (hayirSayisi * 0.8);
@@ -269,7 +283,7 @@ function final() {
     document.getElementById("zorlaSayfasi").style.display =
         "none";
     document.getElementById("baslik").innerHTML =
-        "seni cok seviyorum cnmmm 💗";
+        "elimden anca bu kadar geldi bn de yazilimci degilim ama seni cok seviyorum cnmmm 💗";
     document.getElementById("butonlar").innerHTML =
         "";
     document.getElementById("kopek").style.display =
