@@ -107,7 +107,7 @@ function kotu() {
     document.getElementById("baslik").innerHTML =
         "niye??????";
 
-    document.getElementById("butonlar").innerHTML = `
+    document.getElementById("butonlar").m = `
         <button onclick="tmmSus()">sni ck ozledm</button>
         <button onclick="tmmSus()">senle ilgisi yok mal herseyi ustune alinma</button>
     `;
@@ -180,18 +180,13 @@ function hayir() {
     surpriz("HAYIR MI??!!");
 
 }
-
-
-function dusunme() {
-
-    surpriz("DÜŞÜNMEN Mİ LAZIM??!!");
-
-}
-
-
 function surpriz(yazi) {
-    document.getElementById("jumpscare.gif").innerHTML = `
-    document.getElementById("jumpscare.mp3").innerHTML = `
+    document.getElementById("baslik").innerHTML = yazi;
+
+    document.getElementById("butonlar").innerHTML = `
+        <button onclick="finalSecim()">pardon askim barisalim 💗</button>
+    `;
+}
             <button onclick="devamEt()">pardon askim barisalim</button>
     document.getElementById("baslik").innerHTML =
         yazi;
