@@ -97,7 +97,7 @@ button:active {
         scale(.95);
 }
 /* -------------------- */
-/* UÇUŞAN KALPLER */
+/* KALPLER */
 /* -------------------- */
 #kalpler {
     position: fixed;
@@ -144,21 +144,46 @@ button:active {
     position: fixed;
     inset: 0;
     display: none;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 25px;
     background:
         rgba(0, 0, 0, 0.9);
     z-index: 9999;
 }
-#jumpscare img {
+#jumpscareGif {
     width:
         min(900px, 95vw);
     max-height:
-        90vh;
-    object-fit: contain;
+        75vh;
+    object-fit:
+        contain;
+    display: block;
+}
+#jumpscareButon {
+    position: relative;
+    z-index: 10001;
+    display: block;
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f96,
+            #ff78ad
+        );
+    color: white;
+    border: none;
+    border-radius: 40px;
+    padding:
+        15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, .4);
 }
 /* -------------------- */
-/* FINAL GIFLERİ */
+/* FİNAL GIFLERİ */
 /* -------------------- */
 #finalGifler {
     display: none;
@@ -184,7 +209,7 @@ button:active {
         rotate(2deg);
 }
 /* -------------------- */
-/* GENEL EKRANLAR */
+/* EKRANLAR */
 /* -------------------- */
 .ekran {
     position: fixed;
@@ -219,12 +244,12 @@ button:active {
 /* SEVGİ YAZISI */
 /* -------------------- */
 #sevgiMetni {
-    display: block;
     width:
         min(700px, 90vw);
     max-height:
         55vh;
-    overflow-y: auto;
+    overflow-y:
+        auto;
     margin:
         20px auto;
     padding:
@@ -259,7 +284,7 @@ button:active {
     flex-wrap: wrap;
 }
 /* -------------------- */
-/* ZORLA SAYFASI */
+/* ZORLA BARIŞTIK */
 /* -------------------- */
 #zorlaButonlar {
     display: flex;
@@ -318,7 +343,7 @@ button:active {
     }
 }
 /* -------------------- */
-/* TABLET / TELEFON */
+/* TELEFON */
 /* -------------------- */
 @media (max-width: 600px) {
     h1 {
@@ -333,6 +358,15 @@ button:active {
         width: 100px;
         height: 100px;
         margin: 4px;
+    }
+    #jumpscareGif {
+        width: 94vw;
+        max-height: 65vh;
+    }
+    #jumpscareButon {
+        font-size: 17px;
+        padding:
+            13px 22px;
     }
     #sevgiMetni {
         width:
