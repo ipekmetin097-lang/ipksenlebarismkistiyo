@@ -4,9 +4,22 @@
 body {
     margin: 0;
     background:
-        radial-gradient(circle at 20% 20%, #fff0f7 0%, transparent 30%),
-        radial-gradient(circle at 80% 80%, #ffc1dc 0%, transparent 35%),
-        linear-gradient(135deg, #ffd6e7, #ffeaf3, #ffc8df);
+        radial-gradient(
+            circle at 20% 20%,
+            #fff0f7 0%,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #ffc1dc 0%,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #ffeaf3,
+            #ffc8df
+        );
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -23,15 +36,19 @@ body {
     max-width: 900px;
     position: relative;
     z-index: 2;
-    animation: giris 1s ease;
+    animation:
+        giris 1s ease;
 }
 h1 {
     color: #ff4f96;
-    font-size: clamp(35px, 6vw, 65px);
+    font-size:
+        clamp(35px, 6vw, 65px);
     margin-bottom: 25px;
     text-shadow:
-        2px 2px 10px rgba(255, 79, 150, 0.2);
-    animation: hafif 2s infinite ease-in-out;
+        2px 2px 10px
+        rgba(255, 79, 150, 0.2);
+    animation:
+        hafif 2s infinite ease-in-out;
 }
 #kopek {
     width: 220px;
@@ -40,34 +57,44 @@ h1 {
     margin: 20px auto;
     border-radius: 20px;
     box-shadow:
-        0 10px 30px rgba(255, 79, 150, 0.2);
+        0 10px 30px
+        rgba(255, 79, 150, 0.2);
 }
 /* -------------------- */
 /* BUTONLAR */
 /* -------------------- */
 button {
     background:
-        linear-gradient(135deg, #ff4f96, #ff78ad);
+        linear-gradient(
+            135deg,
+            #ff4f96,
+            #ff78ad
+        );
     color: white;
     border: none;
     border-radius: 40px;
-    padding: 15px 30px;
+    padding:
+        15px 30px;
     font-size: 20px;
     margin: 10px;
     cursor: pointer;
     box-shadow:
-        0 8px 20px rgba(255, 79, 150, 0.25);
+        0 8px 20px
+        rgba(255, 79, 150, 0.25);
     transition:
         transform .25s ease,
         box-shadow .25s ease;
 }
 button:hover {
-    transform: scale(1.08);
+    transform:
+        scale(1.08);
     box-shadow:
-        0 12px 25px rgba(255, 79, 150, 0.35);
+        0 12px 25px
+        rgba(255, 79, 150, 0.35);
 }
 button:active {
-    transform: scale(.95);
+    transform:
+        scale(.95);
 }
 /* -------------------- */
 /* UÇUŞAN KALPLER */
@@ -111,6 +138,26 @@ button:active {
     }
 }
 /* -------------------- */
+/* JUMPSCARE */
+/* -------------------- */
+#jumpscare {
+    position: fixed;
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background:
+        rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+}
+#jumpscare img {
+    width:
+        min(900px, 95vw);
+    max-height:
+        90vh;
+    object-fit: contain;
+}
+/* -------------------- */
 /* FINAL GIFLERİ */
 /* -------------------- */
 #finalGifler {
@@ -126,7 +173,8 @@ button:active {
     border-radius: 20px;
     margin: 8px;
     box-shadow:
-        0 10px 25px rgba(255, 79, 150, .2);
+        0 10px 25px
+        rgba(255, 79, 150, .2);
     transition:
         transform .3s ease;
 }
@@ -171,28 +219,39 @@ button:active {
 /* SEVGİ YAZISI */
 /* -------------------- */
 #sevgiMetni {
-    width: min(750px, 92vw);
-    max-height: 55vh;
+    display: block;
+    width:
+        min(700px, 90vw);
+    max-height:
+        55vh;
     overflow-y: auto;
-    margin: 20px auto;
-    padding: 25px 30px;
+    margin:
+        20px auto;
+    padding:
+        25px;
+    border-radius:
+        20px;
     background:
-        rgba(255, 255, 255, 0.55);
-    border-radius: 25px;
+        rgba(255, 255, 255, .6);
     box-shadow:
-        0 10px 30px rgba(255, 79, 150, .15);
-    text-align: left;
-    color: #7d3153;
-    font-size: 18px;
-    line-height: 1.7;
-    backdrop-filter: blur(5px);
+        0 10px 30px
+        rgba(255, 79, 150, .15);
+    color:
+        #7d3153;
+    font-size:
+        18px;
+    line-height:
+        1.7;
+    text-align:
+        left;
 }
 #sevgiMetni p {
     margin:
         0 0 18px 0;
 }
 #sevgiMetni p:last-child {
-    margin-bottom: 0;
+    margin-bottom:
+        0;
 }
 .altButonlar {
     display: flex;
@@ -237,8 +296,7 @@ button:active {
     }
 }
 @keyframes hafif {
-    0%,
-    100% {
+    0%, 100% {
         transform:
             translateY(0);
     }
@@ -260,7 +318,7 @@ button:active {
     }
 }
 /* -------------------- */
-/* TELEFON / TABLET */
+/* TABLET / TELEFON */
 /* -------------------- */
 @media (max-width: 600px) {
     h1 {
@@ -277,8 +335,14 @@ button:active {
         margin: 4px;
     }
     #sevgiMetni {
-        font-size: 16px;
-        line-height: 1.6;
+        width:
+            92vw;
+        max-height:
+            55vh;
+        font-size:
+            16px;
+        line-height:
+            1.6;
         padding:
             20px;
     }
