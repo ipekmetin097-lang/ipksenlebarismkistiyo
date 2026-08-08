@@ -37,7 +37,7 @@ function devamEt() {
         document.getElementById("kopek").style.display =
             "block";
         document.getElementById("butonlar").innerHTML = `
-            <button onclick="devamEt()">hoş buldum</button>
+            <button onclick="devamEt()">hosbuldum</button>
         `;
     }
     else if (sayfa == 2) {
@@ -58,7 +58,7 @@ function superr() {
     document.getElementById("baslik").innerHTML =
         "niye?????";
     document.getElementById("butonlar").innerHTML = `
-        <button onclick="tmmSus()">sen olmadan gecen günlerim cok huzurlu</button>
+        <button onclick="tmmSus()">sigarama indirim gelmis</button>
         <button onclick="tmmSus()">iyiyim iste mal</button>
     `;
 }
