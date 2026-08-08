@@ -1,11 +1,12 @@
 let sayfa = 0;
 let hayirSayisi = 0;
 /* -------------------- */
-/* KALP SİSTEMİ */
+/* KALPLER */
 /* -------------------- */
 function kalpOlustur() {
     const kalpler =
         document.getElementById("kalpler");
+    if (!kalpler) return;
     const kalp =
         document.createElement("div");
     kalp.className = "kalp";
@@ -19,8 +20,7 @@ function kalpOlustur() {
     kalp.innerHTML =
         kalpTipleri[
             Math.floor(
-                Math.random() *
-                kalpTipleri.length
+                Math.random() * kalpTipleri.length
             )
         ];
     kalp.style.left =
@@ -42,9 +42,9 @@ setInterval(kalpOlustur, 500);
 /* -------------------- */
 function devamEt() {
     sayfa++;
-    if (sayfa == 1) {
+    if (sayfa === 1) {
         document.getElementById("baslik").innerHTML =
-            "hoşgldn...";
+            "hoşgeldin...";
         document.getElementById("kopek").style.display =
             "block";
         document.getElementById("butonlar").innerHTML = `
@@ -53,7 +53,7 @@ function devamEt() {
             </button>
         `;
     }
-    else if (sayfa == 2) {
+    else if (sayfa === 2) {
         document.getElementById("kopek").style.display =
             "none";
         document.getElementById("baslik").innerHTML =
@@ -76,7 +76,7 @@ function superr() {
         "niye?????";
     document.getElementById("butonlar").innerHTML = `
         <button onclick="tmmSus()">
-            sen olmadan gecen gunlerim cok huzurlu
+            sen olmadan gecen günlerim cok huzurlu
         </button>
         <button onclick="tmmSus()">
             iyiyim iste mal
@@ -91,7 +91,7 @@ function kotu() {
             sni ck ozledm
         </button>
         <button onclick="tmmSus()">
-            senle ilgisi yok mal herseyi ustune alinma
+            senle ilgisi yok mal her seui ustune alınma
         </button>
     `;
 }
@@ -112,7 +112,7 @@ function tmmSus() {
 /* -------------------- */
 function baris() {
     document.getElementById("baslik").innerHTML =
-        "barışak mı";
+        "barisak mı";
     document.getElementById("butonlar").innerHTML = `
         <button onclick="evet1()">
             evet
@@ -130,7 +130,7 @@ function evet1() {
             evt
         </button>
         <button onclick="dusunme()">
-            düşünmem lazım
+            dusunmem lazım
         </button>
     `;
 }
@@ -142,18 +142,18 @@ function sonSoru() {
             evt
         </button>
         <button onclick="dusunme()">
-            düşünmem lazım
+            dusunmem lazım
         </button>
     `;
 }
 /* -------------------- */
-/* HAYIR / DÜŞÜNME */
+/* HAYIR */
 /* -------------------- */
 function hayir() {
     surpriz("HAYIR MI??!!");
 }
 function dusunme() {
-    surpriz("DÜŞÜNMEN Mİ LAZIM??!!");
+    surpriz("DUSUNMEN Mİ LAZIM??!!");
 }
 /* -------------------- */
 /* JUMPSCARE */
@@ -162,34 +162,32 @@ function surpriz(yazi) {
     document.getElementById("baslik").innerHTML =
         yazi;
     const jumpscare =
-        document.getElementById("jumpscare.gif");
+        document.getElementById("jumpscare");
     const audio =
-        document.getElementById("jumpscare.mp3");
-    jumpscare.png.style.display =
+        document.getElementById("jumpscareAudio");
+    jumpscare.style.display =
         "flex";
     audio.currentTime = 0;
     audio.play().catch(function () {
         console.log(
-            "Ses otomatik olarak başlatılamadı."
+            "Tarayıcı ses oynatmayı engelledi."
         );
     });
-    document.getElementById("butonlar").innerHTML = `
-        <button onclick="jumpscareKapat()">
-            pardon askim barisalim
-        </button>
-    `;
 }
+/* -------------------- */
+/* JUMPSCARE KAPAT */
+/* -------------------- */
 function jumpscareKapat() {
-    const jumpscare.png=
-        document.getElementById("jumpscare.png");
+    const jumpscare =
+        document.getElementById("jumpscare");
     const audio =
-        document.getElementById("jumpscare.mp3");
-    jumpscare.png.style.display =
+        document.getElementById("jumpscareAudio");
+    jumpscare.style.display =
         "none";
     audio.pause();
     audio.currentTime = 0;
     document.getElementById("baslik").innerHTML =
-        "barisalm mı";
+        "barışak mı";
     document.getElementById("butonlar").innerHTML = `
         <button onclick="evet1()">
             evet
@@ -200,22 +198,22 @@ function jumpscareKapat() {
     `;
 }
 /* -------------------- */
-/* ANA SEÇİM */
+/* FİNAL SEÇİM */
 /* -------------------- */
 function finalSecim() {
     document.getElementById("baslik").innerHTML =
-        "baristik dimi";
+        "barıştık dimi";
     document.getElementById("butonlar").innerHTML = `
         <button onclick="sevgiSayfasi()">
             seni cok seviyorum 💗
         </button>
         <button onclick="zorlaSayfasi()">
-            zorla barıstk mal
+            zorla baristik mal
         </button>
     `;
 }
 /* -------------------- */
-/* SENİ ÇOK SEVİYORUM */
+/* SEVGİ SAYFASI */
 /* -------------------- */
 function sevgiSayfasi() {
     document.getElementById("sevgiSayfasi").style.display =
@@ -234,17 +232,23 @@ function zorlaSayfasi() {
     document.getElementById("zorlaSayfasi").style.display =
         "flex";
     hayirSayisi = 0;
-    document.getElementById("evetButonu").style.transform =
-        "scale(1)";
+    const evet =
+        document.getElementById("evetButonu");
+    evet.style.position = "";
+    evet.style.inset = "";
+    evet.style.width = "";
+    evet.style.height = "";
+    evet.style.margin = "";
+    evet.style.borderRadius = "";
+    evet.style.fontSize = "";
+    evet.style.transform = "scale(1)";
+    evet.innerHTML =
+        "evet";
 }
 function hayirBuyut() {
     hayirSayisi++;
     const evet =
         document.getElementById("evetButonu");
-    /*
-    Her hayırda evet butonu büyüyor.
-    5. hayırda ekranı kaplıyor.
-    */
     if (hayirSayisi < 5) {
         const buyume =
             1 + (hayirSayisi * 0.8);
