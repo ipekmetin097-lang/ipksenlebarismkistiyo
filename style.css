@@ -140,14 +140,15 @@ button:active {
     overflow: hidden !important;
     z-index: 999999999 !important;
 }
+/* GIF TAM EKRAN */
 #jumpscareGif {
     position: absolute !important;
     top: 0 !important;
     left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    min-width: 100% !important;
-    min-height: 100% !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-width: 100vw !important;
+    min-height: 100vh !important;
     max-width: none !important;
     max-height: none !important;
     margin: 0 !important;
@@ -156,11 +157,40 @@ button:active {
     object-fit: cover !important;
     z-index: 1 !important;
 }
+/* -------------------- */
+/* JUMPSCARE YAZISI */
+/* -------------------- */
+#jumpscareYazi {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform:
+        translate(-50%, -50%) !important;
+    width: 90% !important;
+    text-align: center;
+    color: white;
+    font-size:
+        clamp(24px, 5vw, 55px);
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow:
+        2px 2px 5px black,
+        -2px -2px 5px black,
+        2px -2px 5px black,
+        -2px 2px 5px black;
+    display: none;
+    pointer-events: none;
+    z-index: 9999999998 !important;
+}
+/* -------------------- */
+/* JUMPSCARE BUTONU */
+/* -------------------- */
 #jumpscareButon {
     position: absolute !important;
     left: 50% !important;
     bottom: 40px !important;
-    transform: translateX(-50%) !important;
+    transform:
+        translateX(-50%) !important;
     margin: 0 !important;
     display: none;
     z-index: 9999999999 !important;
@@ -340,7 +370,7 @@ button:active {
     }
 }
 /* -------------------- */
-/* TABLET / TELEFON */
+/* TELEFON */
 /* -------------------- */
 @media (max-width: 600px) {
     h1 {
@@ -369,11 +399,15 @@ button:active {
         margin: 0 !important;
     }
     #jumpscareGif {
-        width: 100% !important;
-        height: 100% !important;
-        min-width: 100% !important;
-        min-height: 100% !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        min-width: 100vw !important;
+        min-height: 100vh !important;
         object-fit: cover !important;
+    }
+    #jumpscareYazi {
+        width: 90% !important;
+        font-size: 25px;
     }
     #jumpscareButon {
         left: 50% !important;
