@@ -162,10 +162,10 @@ function surpriz(yazi) {
     document.getElementById("baslik").innerHTML =
         yazi;
     const jumpscare =
-        document.getElementById("jumpscare");
+        document.getElementById("jumpscare.gif");
     const audio =
-        document.getElementById("jumpscareAudio");
-    jumpscare.style.display =
+        document.getElementById("jumpscare.mp3");
+    jumpscare.png.style.display =
         "flex";
     audio.currentTime = 0;
     audio.play().catch(function () {
@@ -180,16 +180,16 @@ function surpriz(yazi) {
     `;
 }
 function jumpscareKapat() {
-    const jumpscare =
-        document.getElementById("jumpscare");
+    const jumpscare.png=
+        document.getElementById("jumpscare.png");
     const audio =
-        document.getElementById("jumpscareAudio");
-    jumpscare.style.display =
+        document.getElementById("jumpscare.mp3");
+    jumpscare.png.style.display =
         "none";
     audio.pause();
     audio.currentTime = 0;
     document.getElementById("baslik").innerHTML =
-        "barışak mı";
+        "barisalm mı";
     document.getElementById("butonlar").innerHTML = `
         <button onclick="evet1()">
             evet
@@ -210,7 +210,7 @@ function finalSecim() {
             seni cok seviyorum 💗
         </button>
         <button onclick="zorlaSayfasi()">
-            zorla barıştık mal
+            zorla barıstk mal
         </button>
     `;
 }
