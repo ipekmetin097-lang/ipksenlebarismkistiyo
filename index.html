@@ -1,102 +1,180 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💗</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
+    <!-- Uçuşan kalpler -->
     <div id="kalpler"></div>
+
+
     <!-- JUMPSCARE -->
+
     <div id="jumpscare">
-        <img id="jumpscareGif" src="jumpscare.gif" alt="jumpscare">
-        <button id="jumpscareButon" onclick="jumpscareKapat()">
-            pardon askım barisalm 💗
+
+        <img
+            id="jumpscareGif"
+            src="jumpscare.gif"
+            alt="jumpscare">
+
+        <button
+            id="jumpscareButon"
+            onclick="jumpscareKapat()">
+            pardon askim barisalim
         </button>
+
     </div>
-    <audio id="jumpscareAudio" src="jumpscare.mp3" preload="auto"></audio>
-    <!-- ANA SAYFA -->
+
+    <audio
+        id="jumpscareAudio"
+        src="jumpscare.mp3"
+        preload="auto">
+    </audio>
+
+
     <div class="kutu">
+
         <h1 id="baslik">slm cnm</h1>
+
         <img id="kopek" src="kopek.png" alt="köpek">
+
+
+        <!-- Final GIFleri -->
+
         <div id="finalGifler">
+
             <img src="My Love Couple GIF by Cosytales.gif" alt="Kalp">
+
             <img src="Cat Kawai GIF.gif" alt="Tavşan">
+
             <img src="Heart Love GIF by Bunny (1).gif" alt="Kalp">
+
         </div>
+
+
         <div id="butonlar">
-            <button onclick="devamEt()">
-                slmmm
-            </button>
+
+            <button onclick="devamEt()">slmmm</button>
+
         </div>
+
     </div>
-    <!-- SEVGİ SAYFASI -->
+
+
+    <!-- Sevgi yazısı sayfas -->
+
     <div id="sevgiSayfasi" class="ekran">
+
         <div class="sayfaIcerik">
-            <h1>ben de seni ck svym 💗</h1>
+
+            <h1>ben de seni ck svym💗</h1>
+
+
             <div id="sevgiMetni">
+
                 <p>
-                    Arada seni uzdugum icin cok pzur dilerim.
-                    Seni üzmek gibi bir niyetim asla yoktu
-                    hicbi zaman.
-                    Cidden annem ve ailem hakkında en rahat
-                    konusabildigim kisisin ve bu benim icin
-                    cok değerli.
-                    Senden önce gercekten btun sanal iliski
-                    yapanlara amk malllari falan diyordum ama
-                    seninle tanisinca bu dusuncem tamamen degisri.
-                    Nereye kadar gidebiliriz bilmiyorum ama
-                    gerçekten benim icin cok degerlisin Tuna.
-                    Bazen birbirimize igrenc davranıyoruz,
-                    anlamıyoruz, surekli suçluyoruz ve kırıyoruz
-                    evet.
-                    Ama ben seni hala her seye ragmen gercekten cok seviyorum.
-                    Umarım sen de hala beni çok seviyosundur ve beni affedersin.
-                    Ve duzgun, saglikli bir iliskiye baslaeiz. 💕
+                    Arada seni uzdugum icin cok ozur dilerim.
+                    seni uzmek gibi bi niyetim asla yoktu hicbir zaman.
                 </p>
+
+                <p>
+                    cidden annem ve ailem hakkinda en rahat
+                    konusabildihim kisisin ve bu benim icin cok degerli.
+                </p>
+
+                <p>
+                    senden once gercekten butun snal iliski ypanlara
+                    amk mallari falan diyodum ama seninle tanisinca
+                    bu dusuncem tamamen degisti.
+                </p>
+
+                <p>
+                    nereye kadar gidebiliriz bilmiyorum ama gercekten
+                    benim icin cok degerlisin tuna.
+                </p>
+
+                <p>
+                    bazen birbirimize igrenc davraniyoruz,anlamiyoruz
+                    surekli sucluyoruz ve kiriyoruz evet.
+                    ama ben seni hala herseye ragmen cok seviyorum.
+                </p>
+
+                <p>
+                    umarim sen de hala beni cok seviyosundur ve beni
+                    affedersin.ve duzgun,saglik bir iliskiye baslariz.💕
+                </p>
+
             </div>
+
+
             <div class="altButonlar">
-                <button onclick="final()">
-                    yaa 💕
-                </button>
+
+                <button onclick="final()">yaa💕</button>
+
                 <button onclick="okumuyorum()">
                     i ain't reading that shit vro
                 </button>
+
             </div>
+
         </div>
+
     </div>
-    <!-- OKUMUYORUM -->
+
+
+    <!-- Okumuyorum sayfası -->
+
     <div id="okumuyorumSayfasi" class="ekran">
+
         <div class="sayfaIcerik">
-            <h1>
-                tmm ama barıstık
-            </h1>
-            <button onclick="final()">
-                tmm
-            </button>
+
+            <h1>tmm ama barıstik</h1>
+
+            <button onclick="final()">tmm</button>
+
         </div>
+
     </div>
-    <!-- ZORLA BARIŞTIK -->
+
+
+    <!-- Zorla barıştık sayfası -->
+
     <div id="zorlaSayfasi" class="ekran">
+
         <div class="sayfaIcerik">
-            <h1>
-                sonucta baristik ama
-            </h1>
+
+            <h1>sonucta baristik ama</h1>
+
             <div id="zorlaButonlar">
+
                 <button
                     id="evetButonu"
                     onclick="zorlaEvet()">
                     evet
                 </button>
+
                 <button
                     id="hayirButonu"
                     onclick="hayirBuyut()">
                     hayır
                 </button>
+
             </div>
+
         </div>
+
     </div>
+
+
     <script src="script.js"></script>
+
 </body>
+
 </html>
